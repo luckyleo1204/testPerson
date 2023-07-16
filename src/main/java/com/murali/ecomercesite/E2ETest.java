@@ -1,5 +1,7 @@
 package com.murali.ecomercesite;
 
+import com.murali.ecomercesite.pageObjects.LandingPage;
+import com.murali.ecomercesite.pageObjects.ProductCatalog;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.managers.ChromeDriverManager;
 import org.openqa.selenium.By;
@@ -29,21 +31,11 @@ public class E2ETest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
         driver.get("https://rahulshettyacademy.com/client");
-        driver.findElement(By.id("userEmail")).sendKeys("cp.murali@gmail.com");
-        driver.findElement(By.id("userPassword")).sendKeys("Harshi@123");
-        driver.findElement(By.id("login")).click();
+        LandingPage lp=new LandingPage(driver);
+        lp.loginApp("cp.murali@gmail.com","Harshi@123");
+        ProductCatalog pc=new ProductCatalog(driver);
+        pc.addProductToCart(productName);
 
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
-        List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
-
-       WebElement prod= products.stream().filter(n->
-                n.findElement(By.cssSelector("b")).getText()
-                        .equalsIgnoreCase(productName)).findFirst().orElse(null);
-        prod.findElement(By.cssSelector(".card-body button:last-of-type")).click();
-
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.cssSelector("#toast-container"))));
-        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
         driver.findElement(By.cssSelector("[routerlink*=cart]")).click();
 
         List <WebElement> cartProducts = driver.findElements(By.cssSelector(".cartSection h3"));
@@ -56,7 +48,7 @@ public class E2ETest {
         Actions a = new Actions(driver);
         a.sendKeys(driver.findElement(By.cssSelector("[placeholder='Select Country']")), "india").build().perform();
 
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
+        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ta-results")));
 
         driver.findElement(By.xpath("(//button[contains(@class,'ta-item')])[2]")).click();
        // driver.findElement(By.cssSelector(".action__submit")).click();
