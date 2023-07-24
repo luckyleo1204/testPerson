@@ -1,0 +1,76 @@
+{
+  "albums": [
+    {
+      "id": 1,
+      "artist": "The Beatles",
+      "title": "Please Please Me",
+      "year": "1963"
+    },
+    {
+      "id": 2,
+      "artist": "The Beatles",
+      "title": "With the Beatles",
+      "year": "1963"
+    },
+    {
+      "id": 3,
+      "artist": "The Beatles",
+      "title": "A Hard Day's Night",
+      "year": "1964"
+    },
+    {
+      "id": 4,
+      "artist": "The Beatles",
+      "title": "Beatles for Sale",
+      "year": "1964"
+    },
+    {
+      "id": 5,
+      "artist": "The Beatles",
+      "title": "Help!",
+      "year": "1965"
+    },
+    {
+      "artist": "The Beatles",
+      "year": "1965",
+      "title": "Rubber Soul",
+      "id": 6
+    },
+    {
+      "artist": "The Beatles - Murali",
+      "year": "1978",
+      "title": "Rubber Soul- Murali",
+      "id": 7
+    },
+    {
+      "artist": "The Beatles - Murali",
+      "year": "1978",
+      "title": "Rubber Soul- Murali",
+      "id": 8
+    },
+    {
+      "artist": "The Beatles - Murali",
+      "year": "1978",
+      "title": "Rubber Soul- Murali",
+      "id": 9
+    },
+    {
+      "artist": "The Beatles - Murali",
+      "year": "1978",
+      "title": "Rubber Soul- Murali",
+      "id": 10
+    },
+    {
+      "artist": "The Beatles - Murali",
+      "year": "1978",
+      "title": "Rubber Soul- Murali",
+      "id": 11
+    },
+    {
+      "artist": "The Beatles - Murali",
+      "year": "1978",
+      "title": "Rubber Soul- Murali",
+      "id": 12
+    }
+  ]
+}

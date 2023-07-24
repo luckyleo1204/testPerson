@@ -1,0 +1,34 @@
+{
+  "albums": [
+    {
+      "id": 1,
+      "artist": "The Beatles",
+      "title": "Please Please Me",
+      "year": "1963"
+    },
+    {
+      "id": 2,
+      "artist": "The Beatles",
+      "title": "With the Beatles",
+      "year": "1963"
+    },
+    {
+      "id": 3,
+      "artist": "The Beatles",
+      "title": "A Hard Day's Night",
+      "year": "1964"
+    },
+    {
+      "id": 4,
+      "artist": "The Beatles",
+      "title": "Beatles for Sale",
+      "year": "1964"
+    },
+    {
+      "id": 5,
+      "artist": "The Beatles",
+      "title": "Help!",
+      "year": "1965"
+    }
+  ]
+}

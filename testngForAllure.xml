@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="REST Assured test examples">
+    <test name="All">
+        <classes>
+            <class name="com.murali.ecomercesite.pageObjects.ApiTesting.SchemaValidation"/>
+            <class name="com.murali.ecomercesite.pageObjects.ApiTesting.ApiTesting"/>
+        </classes>
+    </test>
+</suite>

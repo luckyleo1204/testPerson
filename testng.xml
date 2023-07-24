@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="test_suite">
+    <test name="test">
+        <classes>
+            <class name="com.murali.ecomercesite.pageObjects.TestngPractice.TestNgPractice">
+                <methods>
+                                   <!--> <include name="Mobile.*"/><-->
+                    <exclude name="Mobile.*"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
