@@ -13,7 +13,8 @@ public class RapidoApiTestPractice {
 
     @BeforeMethod
     public void setup() {
-      RestAssured.baseURI = "https://ap-southeast-2.aws.webhooks.mongodb-stitch.com";
+
+        RestAssured.baseURI = "https://ap-southeast-2.aws.webhooks.mongodb-stitch.com";
     }
 
     @Test
