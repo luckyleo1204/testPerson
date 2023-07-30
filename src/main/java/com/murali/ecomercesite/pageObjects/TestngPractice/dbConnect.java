@@ -8,7 +8,7 @@ import java.sql.Statement;
 public class dbConnect {
 
     public static void main(String[] args) {
-        Class.forName("oracle.jdbc.driver.OracleDriver");
+       // Class.forName("oracle.jdbc.driver.OracleDriver");
         String url = "jdbc:oracle:thin:@localhost:1521:xe";
         String username = "XXXXXX";
         String password = "XXXXXX";
