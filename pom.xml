@@ -69,35 +69,40 @@
             <artifactId>allure-testng</artifactId>
             <version>2.13.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>4.1.5</version>
+        </dependency>
     </dependencies>
 
-    <reporting>
-        <!--<excludeDefaults>true</excludeDefaults>-->
-        <!--<plugins>-->
-        <!--<plugin>-->
-        <!--<groupId>io.qameta.allure</groupId>-->
-        <!--<artifactId>allure-maven</artifactId>-->
-        <!--<version>2.8</version>-->
-        <!--</plugin>-->
-        <!--</plugins>-->
-        <!--</reporting>-->
-        <!--<reporting>-->
-        <excludeDefaults>true</excludeDefaults>
-        <plugins>
-            <plugin>
-                <groupId>ru.yandex.qatools.allure</groupId>
-                <artifactId>allure-maven-plugin</artifactId>
-                <version>2.6</version>
-                <configuration>
-                    <resultsDirectory>${project.build.directory}/target/allure-reports/</resultsDirectory>
-                    <inputDirectories>${project.build.directory}/target/allure-reports/</inputDirectories>
-                    <reportDirectory>${project.build.directory}/target/allure-reports/</reportDirectory>
-                    <reportingOutputDirectory>${project.build.directory}/target/allure-reports/</reportingOutputDirectory>
-                    <!--<failReportIfEmpty>false</failReportIfEmpty>-->
-                </configuration>
-            </plugin>
-        </plugins>
-    </reporting>
+<!--    <reporting>-->
+<!--        &lt;!&ndash;<excludeDefaults>true</excludeDefaults>&ndash;&gt;-->
+<!--        &lt;!&ndash;<plugins>&ndash;&gt;-->
+<!--        &lt;!&ndash;<plugin>&ndash;&gt;-->
+<!--        &lt;!&ndash;<groupId>io.qameta.allure</groupId>&ndash;&gt;-->
+<!--        &lt;!&ndash;<artifactId>allure-maven</artifactId>&ndash;&gt;-->
+<!--        &lt;!&ndash;<version>2.8</version>&ndash;&gt;-->
+<!--        &lt;!&ndash;</plugin>&ndash;&gt;-->
+<!--        &lt;!&ndash;</plugins>&ndash;&gt;-->
+<!--        &lt;!&ndash;</reporting>&ndash;&gt;-->
+<!--        &lt;!&ndash;<reporting>&ndash;&gt;-->
+<!--        <excludeDefaults>true</excludeDefaults>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>ru.yandex.qatools.allure</groupId>-->
+<!--                <artifactId>allure-maven-plugin</artifactId>-->
+<!--                <version>2.6</version>-->
+<!--                <configuration>-->
+<!--                    <resultsDirectory>${project.build.directory}/target/allure-reports/</resultsDirectory>-->
+<!--                    <inputDirectories>${project.build.directory}/target/allure-reports/</inputDirectories>-->
+<!--                    <reportDirectory>${project.build.directory}/target/allure-reports/</reportDirectory>-->
+<!--                    <reportingOutputDirectory>${project.build.directory}/target/allure-reports/</reportingOutputDirectory>-->
+<!--                    &lt;!&ndash;<failReportIfEmpty>false</failReportIfEmpty>&ndash;&gt;-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </reporting>-->
 
 
 </project>

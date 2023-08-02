@@ -461,6 +461,15 @@ public class JavaPractice {
     }
 
     @Test
+    public void reverseEachWordInString(){
+        String str="Super Man Bat Man Spider Man";
+        List<String> al=Arrays.asList(str.split(" "));
+        al.stream().sorted(Comparator.reverseOrder()).forEach(n-> System.out.println(n));
+
+
+    }
+
+    @Test
     public void CountVowelsAndConsonants(){
 
         System.out.println("Input text: \n" + TEXT + "\n");
