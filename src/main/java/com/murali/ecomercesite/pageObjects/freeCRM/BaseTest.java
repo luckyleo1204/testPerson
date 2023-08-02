@@ -39,10 +39,12 @@ public class BaseTest {
 //    public void beforeMethodSetup(){
 //        test = extent.createTest(getClass().getSimpleName());
 //    }
+    @Parameters({"browser","url"})
     @BeforeClass
-    public void setup(){
+    public void setup(String browser,String appurl){
         Reporter.log("Browser and App url is getting loaded",true);
-        driver= browserFactory.startApp(driver,conf.getBrowser(),conf.getappURl());
+       // driver= browserFactory.startApp(driver,conf.getBrowser(),conf.getappURl());
+        driver= browserFactory.startApp(driver,browser,appurl);
         Reporter.log("Browser and App url is loaded successfully",true);
 
     }

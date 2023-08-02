@@ -20,10 +20,11 @@ public class browserFactory {
         if (bname.equalsIgnoreCase("Chrome")) {
 //            WebDriverManager.chromedriver().setup();
 //             driver=new ChromeDriver();
-            System.setProperty("webdriver.chrome.driver", "C://Softwares//drivers//chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
             driver = new ChromeDriver();
         } else if (bname.equalsIgnoreCase("firefox")) {
-            WebDriverManager.firefoxdriver().setup();
+          //  WebDriverManager.firefoxdriver().setup();
+            System.setProperty("webdriver.chrome.driver", "./drivers/geckodriver.exe");
             driver = new FirefoxDriver();
         } else {
             WebDriverManager.iedriver().setup();
