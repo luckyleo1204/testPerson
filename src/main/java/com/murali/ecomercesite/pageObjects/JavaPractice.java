@@ -580,6 +580,23 @@ public class JavaPractice {
         players.stream().map(n -> n.getRank()).forEach(n -> System.out.println(n));
     }
 
+    @Test
+    public void streamex1(){
+        List<Integer> list = Arrays.asList(1,5,6,7,8,9,10);
+        System.out.println(list.stream().filter(n->n>5).mapToInt(i->i).sum());
+    }
+
+    @Test
+    public void maxOddNumber(){
+        List<Integer> list = Arrays.asList(11,43,56,82,51,29,10);
+        System.out.println(list.stream().filter(n->n%2==1).max(Integer::compare).orElse(0));
+    }
+
+    @Test
+    public void checkGivenNumberis(){
+        int x=35;
+    }
+
 
 }
 
