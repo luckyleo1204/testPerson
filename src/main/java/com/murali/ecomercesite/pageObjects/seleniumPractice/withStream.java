@@ -9,11 +9,14 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.time.Duration;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -101,8 +104,11 @@ public class withStream {
 
     @Test
     public void filpkart2(){
-        driver.get("https://www.flipkart.com/search?q=iphone&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off");
+      //  driver.get("https://www.flipkart.com/search?q=iphone&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off");
         String s = "&21.37";
+        Double priceText = Double.parseDouble(s.replaceAll("[^0-9]", ""));
+        NumberFormat numberFormat = new DecimalFormat("#,##0.00");
+        System.out.println(numberFormat.format(priceText));
 //        Pattern p = Pattern.compile("[^0-9]*([0-9]+(\\.[0-9]*)?)");
 //        Matcher m = p.matcher(s);
 //        m.matches();
@@ -127,6 +133,36 @@ public class withStream {
     public void getEvenNo() {
         Integer[] myArray = new Integer[]{1, 4, 5, 7, 9, 10};
         Stream.of(myArray).filter(n -> n % 2 == 0).forEach(System.out::println);
+    }
+
+    @Test
+    public void Calenader()  throws InterruptedException {
+        driver.get("https://www.irctc.co.in/nget/train-search");
+        driver.manage().window().maximize();
+        driver.findElement(By.xpath("//*[@id=\"jDate\"]/span/input")).click();
+        Thread.sleep(2000);
+        WebElement pastDate=driver.findElement(By.xpath("//*[@id=\"jDate\"]/span/div/div/div[2]/table/tbody/tr[2]/td[4]/span"));
+        Assert.assertTrue(pastDate.getAttribute("class").contains("disabled"));
+    }
+
+    @Test
+    public void CalendarSelectMonth() throws InterruptedException {
+        driver.get("https://www.irctc.co.in/nget/train-search");
+        driver.manage().window().maximize();
+        selectMonthDate("September","7");
+    }
+
+    public void selectMonthDate (String Month, String day) throws InterruptedException {
+        driver.findElement(By.xpath("//*[@id=\"jDate\"]/span/input")).click();
+        Thread.sleep(2000);
+        if(driver.findElement(By.xpath("//span[text()='August']")).getText().equalsIgnoreCase("August")){
+            driver.findElement(By.xpath("//*[@id=\"jDate\"]/span/div/div/div[1]/a[2]/span")).click();
+            Thread.sleep(2000);
+            System.out.println(driver.findElement(By.xpath("//span[text()='"+Month+"']")).getText());
+            Assert.assertTrue(driver.findElement(By.xpath("//span[text()='"+Month+"']")).getText().equalsIgnoreCase(Month));
+            driver.findElement(By.xpath("//a[text()=\""+day+"\"]")).click();
+            Thread.sleep(2000);
+        }
     }
 
     @Test
